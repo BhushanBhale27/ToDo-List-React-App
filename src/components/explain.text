@@ -1,0 +1,30 @@
+Certainly! Here's an explanation of the code line by line:
+
+We import the necessary dependencies and the CSS file for styling.
+
+We define the TodoList component.
+
+We initialize the state variables using the useState hook. todos stores the list of todos, newTodo stores the value of the new todo input field, and editIndex keeps track of the index of the todo being edited.
+
+We define the handleAddTodo function to add a new todo. It first checks if the newTodo value is not empty. If editIndex is not null, it means an existing todo is being edited, so we update the todo at the corresponding index. Otherwise, we add a new todo to the todos array. After adding or updating the todo, we reset the newTodo value.
+
+We define the handleDeleteTodo function to delete a todo. It takes the index of the todo as an argument. First, it creates a copy of the todos array using the spread operator. Then it uses the splice method to remove the todo at the specified index. The updated array is stored in the updatedTodos variable, and it's set as the new state using setTodos. If the deleted todo is being edited (the index matches editIndex), we reset the edit state by setting editIndex to null and clearing the newTodo value.
+
+We define the handleEditTodo function to start editing a todo. It takes the index of the todo as an argument. We set the editIndex to the provided index and set the newTodo value to the text of the todo being edited.
+
+We define the handleToggleComplete function to toggle the completion status of a todo. It takes the index of the todo as an argument. We create a copy of the todos array, toggle the completed property of the todo at the specified index, and update the state with the updated array.
+
+We define the JSX markup for the TodoList component.
+
+We create an input field for adding new todos. The value of the input field is set to the newTodo state variable, and the onChange event updates the newTodo value.
+
+We have a button that triggers the handleAddTodo function when clicked. The button label changes based on whether an existing todo is being edited (Update button) or a new todo is being added (Add button).
+
+We render the list of todos using the map function. Each todo item is rendered as an <li> element. The key attribute is set to the index of the todo.
+
+The todo text is displayed within a <span> element. If the todo is completed, the completed class is applied to the <li> element.
+
+49-55. The actions for each todo are displayed as buttons within a <div> element. The buttons have click event handlers to perform the corresponding actions: toggling completion status, editing, and deleting.
+
+We export the TodoList component as the default export.
+This code allows users to add, delete, edit, and mark todos as complete. It dynamically updates the UI based on the state of the todos.
